@@ -1,0 +1,35 @@
+{
+  "name": "response-ql",
+  "version": "1.3.0",
+  "description": "Function argument parser with support of destructuring",
+  "main": "build/index.js",
+  "scripts": {
+    "build:nearley": "nearleyc -o build/grammar.js src/grammar.ne",
+    "build:copy": "cp src/**.js build/",
+    "build": "npm run build:nearley && npm run build:copy",
+    "unparse": "nearley-unparse build/parser.js",
+    "test": "mocha test/test.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevLabWorkSpace/response-ql.git"
+  },
+  "keywords": [
+    "utils",
+    "lib",
+    "func",
+    "function",
+    "functions",
+    "parser",
+    "parse"
+  ],
+  "author": "rumkin",
+  "license": "MIT",
+  "dependencies": {
+    "nearley": "^2.11.0"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "should": "^13.1.2"
+  }
+}
